@@ -1,0 +1,166 @@
+<html>
+<head>
+	<title>Minga</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+</head>
+<body> <!--
+<video id="big-video-vid_html5_api" class="vjs-tech" preload="auto" data-setup="{}" webkit-playsinline="" style="position: absolute; width: 1349px; height: auto;" autoplay="" src="https://s3.amazonaws.com/www-assets.invisionapp.com/Homepage/enterprise-loop.mp4"></video> -->
+<section class="sectionTop" id="sectionTop">
+	<section class="sectionTopLeft" id="sectionTopLeft">
+<ul class="projects">
+		<li><div class="img"></div><div class="avatar"></div>
+		<h3></h3>
+		<a href="#"></a>
+		<strong>LA CASA DE MINGA</strong>
+		<p class="on">HECHO</p>
+		</li>
+	</ul>
+
+	</section><section class="sectionTopRight" id="sectionTopRight">
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d699370.5351911308!2d-73.94791211886316!3d4.643518969081522!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1445693665051" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	</section>
+
+</section>
+<section class="sectionPrincipal" id="sectionPrincipal">
+	<section class="section02" id="section02">
+	<ul class="projectsgroup">
+		<li><div class="imggroup"></div><div class="avatargroup"></div>
+		<h3>Usuario</h3>
+		<a href="#"></a>
+		<strong>teusaquillo</strong>
+		<p class="on">44 reads</p>
+		</li>
+	</ul>
+	</section><section class="section01" id="section01"><li class="minga"><a href="/"></a></li>
+			<ul class="menu">
+			<li><a href="#" onclick="projects()">PASADO</a></li><li><a href="#" onclick="development()">PRESENTE</a></li><li><a href="#" onclick="group()">FUTURO</a></li>
+			</ul>
+			<footer>
+			<p>MINGA <span>MEMORIA COLECTIVA</span><span><a href="#" onclick="map()">ciudad</span></a><a href="http://www.twitter.com/proyectominga" target="_blank"><span>Involucrate @proyectoMinga</span></a>
+				<div id="localizacion">
+<button id="obtener" style="margin:30px;">Obtener mi localización</button>
+</div>
+
+			</p>
+			</footer>
+	</section><section class="section00" id="section00">
+	<ul class="projects">
+		<li><div class="img"></div><div class="avatar"></div>
+		<h3></h3>
+		<a href="#"></a>
+		<strong>LA CASA DE MINGA</strong>
+		<p class="on">HECHO</p>
+		</li>
+	</ul>
+	</section>
+</section><section class="sectionBottom" id="sectionBottom">
+<nav class="topNav">
+<li><a href="">1989</a></li><li><a href="">1989</a></li><li><a href="">1989</a></li><li><a id="logoBottom" class="logoBottom" href="#" onclick="development()"></a></li><li><a href="">1989</a></li><li><a href="">1989</a></li><li><a href="">1989</a></li>
+</nav>
+	<ul class="development">
+		<li><div class="imgdevelopment"><img src="santafe.jpg"></div><div class="avatardevelopment">
+			<a href="#" class="mediaAudio"></a><a href="#" class="mediaVideo"></a><a href="#" class="mediaImg"></a><a href="#" class="mediaDoc"></a>
+		</div>
+		<h3>Santafé</h3>
+		<div class="text"><p>La localidad Santafé es también una de las más antiguas de la ciudad, también conocida por algunos lugares donde las mujeres de la noche podrían contar cientos de historias de lo que pasa detrás de los muros de aquellas enormes casas del barrio Santafé, o quizás alguno de los cientos de habitantes de calle de la calle del cartucho pueda contarnos su historia de vida y lo duro que es sobrevivir en una ciudad tan fría y dura como Bogotá.</p></div>
+		<a href="#"></a>
+		<strong>Usuario</strong>
+		<p class="on">Master</p>
+		</li><li>
+		<div class="imgdevelopment"><img src="teusaquillo.jpg"></div><div class="avatardevelopment">
+			<a href="#" class="mediaAudio"></a><a href="#" class="mediaVideo"></a><a href="#" class="mediaImg"></a><a href="#" class="mediaDoc"></a>
+		</div>
+		<h3>Teusaquillo</h3>
+		<div class="text"><p>La localidad de Teusaquillo es bien conocida por la arquitectura de sus edificios, con un estilo antiguo y gótico que data de hace varias decenas si no es que cientos de años, y aunque recientes, los propietarios de estas casas pueden dar testimonio de que en algunas suceden cosas raras, desde correr los muebles, hasta gritos y sustos que le harían poner los pelos de punta hasta a el mas valiente.</p></div>
+		<a href="#"></a>
+		<strong>Usuario</strong>
+		<p class="on">Master</p>
+		</li>	
+
+	</ul>
+</section>
+	<script type="text/javascript">
+function projects()
+    {
+            if(document.getElementById('section00').className == 'section00')
+            {
+            document.getElementById('section01').className = 'section01-';
+            document.getElementById('section00').className = 'section00-';
+            document.getElementById('section02').className = 'section02';
+            } else {
+            document.getElementById('section01').className = 'section01';
+            document.getElementById('section00').className = 'section00';
+            document.getElementById('section02').className = 'section02';
+                    }
+    } 
+function group()
+    {
+            if(document.getElementById('section02').className == 'section02')
+            {
+            document.getElementById('section01').className = 'section01--';
+            document.getElementById('section02').className = 'section02-';
+            document.getElementById('section00').className = 'section00';
+            } else {
+            document.getElementById('section01').className = 'section01';
+            document.getElementById('section00').className = 'section00';
+            document.getElementById('section02').className = 'section02';
+                    }
+    } 
+function development()
+{
+	if(document.getElementById('sectionBottom').className == 'sectionBottom')
+	{
+		document.getElementById('sectionBottom').className = 'sectionBottom-';
+		document.getElementById('sectionPrincipal').className = 'sectionPrincipal-';
+	} else {
+		document.getElementById('sectionBottom').className = 'sectionBottom';
+		document.getElementById('sectionPrincipal').className = 'sectionPrincipal';
+	}
+}
+
+function map()
+{
+	if(document.getElementById('sectionTop').className == 'sectionTop')
+	{
+		document.getElementById('sectionTop').className = 'sectionTop-';
+		document.getElementById('sectionPrincipal').className = 'sectionPrincipal-';
+	} else {
+		document.getElementById('sectionTop').className = 'sectionTop-';
+		document.getElementById('sectionPrincipal').className = 'sectionPrincipal';
+	}
+}
+
+</script>
+
+<script type="text/javascript">
+function iniciar(){
+var boton=document.getElementById('obtener');
+boton.addEventListener('click', obtener, false);
+}
+ 
+function obtener(){navigator.geolocation.getCurrentPosition(mostrar, gestionarErrores);}
+ 
+function mostrar(posicion){
+var ubicacion=document.getElementById('localizacion');
+var datos='';
+datos+='Latitud: '+posicion.coords.latitude+'<br>';
+datos+='Longitud: '+posicion.coords.longitude+'<br>';
+datos+='Exactitud: '+posicion.coords.accuracy+' metros.<br>';
+ubicacion.innerHTML=datos;
+}
+ 
+function gestionarErrores(error){
+alert('Error: '+error.code+' '+error.message+ '\n\nPor favor compruebe que está conectado '+
+'a internet y habilite la opción permitir compartir ubicación física');
+}
+ 
+window.addEventListener('load', iniciar, false);
+ 
+</script>
+
+</body>
+</html>
