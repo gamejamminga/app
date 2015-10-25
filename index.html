@@ -5,10 +5,19 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<meta charset="utf-8">
+
+    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
 </head>
 <body> <!--
 <video id="big-video-vid_html5_api" class="vjs-tech" preload="auto" data-setup="{}" webkit-playsinline="" style="position: absolute; width: 1349px; height: auto;" autoplay="" src="https://s3.amazonaws.com/www-assets.invisionapp.com/Homepage/enterprise-loop.mp4"></video> -->
 <section class="sectionTop" id="sectionTop">
+	<nav class="leftBar" id="leftBar">
+<li><a href="" onclick="map()"></a></li>
+</nav>
 	<section class="sectionTopLeft" id="sectionTopLeft">
 <ul class="projects">
 		<li><div class="img"></div><div class="avatar"></div>
@@ -19,21 +28,25 @@
 		</li>
 	</ul>
 
+    <div class="todo-wrapper" ng-controller="TodoCtrl">
+      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
+        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+      </form>
+      
+      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+    </div>
+
+
 	</section><section class="sectionTopRight" id="sectionTopRight">
-	<script type="text/javascript">
-var place = new google.maps.LatLng(23.1368,-82.3816);
-var marker = new google.maps.Marker({
-        position: place
-        , title: 'La Universidad de la Habana'
-        , map: map
-        , });
-//marcador en el centro del mapa
-var marker2 = new google.maps.Marker({
-        position: map.getCenter()
-        , title: 'La tienda Carlos III'
-        , map: map
-        , });
-</script>
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d699370.5351911308!2d-73.94791211886316!3d4.643518969081522!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1445693665051" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</section>
 
 </section>
@@ -128,6 +141,8 @@ function development()
 	{
 		document.getElementById('sectionBottom').className = 'sectionBottom-';
 		document.getElementById('sectionPrincipal').className = 'sectionPrincipal-';
+		document.getElementById('leftBar').className = 'leftBar';
+		document.getElementById('sectionTop').className = 'sectionTop';
 	} else {
 		document.getElementById('sectionBottom').className = 'sectionBottom';
 		document.getElementById('sectionPrincipal').className = 'sectionPrincipal';
@@ -140,9 +155,11 @@ function map()
 	{
 		document.getElementById('sectionTop').className = 'sectionTop-';
 		document.getElementById('sectionPrincipal').className = 'sectionPrincipal-';
+		document.getElementById('leftBar').className = 'leftBar-';
 	} else {
 		document.getElementById('sectionTop').className = 'sectionTop-';
 		document.getElementById('sectionPrincipal').className = 'sectionPrincipal';
+		document.getElementById('leftBar').className = 'leftBar';
 	}
 }
 
@@ -171,6 +188,32 @@ alert('Error: '+error.code+' '+error.message+ '\n\nPor favor compruebe que está
 }
  
 window.addEventListener('load', iniciar, false);
+
+
+
+function TodoCtrl($scope) {
+  
+  $scope.todos = [
+    {text:'Learn AngularJS', done:false},         
+    {text: 'Build an app', done:false}
+  ];
+  
+  $scope.getTotalTodos = function () {
+    return $scope.todos.length;
+  };
+  
+  
+  $scope.addTodo = function () {
+    $scope.todos.push({text:$scope.formTodoText, done:false});
+    $scope.formTodoText = '';
+  };
+  
+    $scope.clearCompleted = function () {
+        $scope.todos = _.filter($scope.todos, function(todo){
+            return !todo.done;
+        });
+    };
+}
  
 </script>
 
